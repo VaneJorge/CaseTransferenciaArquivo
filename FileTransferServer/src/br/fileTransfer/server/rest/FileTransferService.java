@@ -131,26 +131,4 @@ public class FileTransferService {
 
 		return "Arquivo baixado com sucesso!";
 	}
-
-//	@POST
-//	@Path("/autenticar")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public OAuthResponse autenticar(@Context HttpServletRequest request)
-//			throws OAuthSystemException, OAuthProblemException {
-//		OAuthTokenRequest oauthRequest = new OAuthTokenRequest(request);
-//		String appClientId = oauthRequest.getClientId();
-//		// String appClientSecret = oauthRequest.getClientSecret();
-//		String senha = oauthRequest.getPassword();
-//		String login = oauthRequest.getUsername();
-//
-//		// Autorizar app cliente com os dados acima
-//
-//		String accessToken = new OAuthIssuerImpl(new MD5Generator()).accessToken();
-//
-//		// Armazenar token para utilizacao nas requisicoes posteriores
-//
-//		return OAuthASResponse.tokenResponse(HttpServletResponse.SC_OK).setAccessToken(accessToken)
-//				.setExpiresIn("10000").buildJSONMessage();
-//	}
-
 }

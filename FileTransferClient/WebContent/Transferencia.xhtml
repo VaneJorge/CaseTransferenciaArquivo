@@ -21,10 +21,23 @@
 			value="Upload e Download de arquivos PDF´s para armazenar na nuvem"
 			style="font-size: 18px;"></p:outputLabel>
 		<br /> <br />
+		<p:commandButton value="Sair" icon="fa fa-sign-out"
+			action="#{fileTransfer.logout}" rendered="#{fileTransfer.logado == true}"></p:commandButton>
 	</div>
 
-
-	<p:panelGrid columnClasses="ui-g-6, ui-g-6" columns="2" layout="grid">
+	<p:panel rendered="#{fileTransfer.logado == false}">
+		<div style="height: 100%; padding: 20px; text-align: center;">
+			<p:outputLabel
+				value="É necessário o login no Google para que seja possível fazer a tranferência"
+				style="font-size: 20px; font-weight: bold;"></p:outputLabel>
+			<br /> <br />
+			<p:link outcome="index" value="Login"
+				style="padding: 10px 30px; border-radius: 5px; text-decoration: blink;"
+				styleClass="ui-priority-primary"></p:link>
+		</div>
+	</p:panel>
+	<p:panelGrid columnClasses="ui-g-6, ui-g-6" columns="2" layout="grid"
+		rendered="#{fileTransfer.logado == true}">
 		<p:panel style="margin: 14px 7px 14px 14px;" header="Subir Arquivo">
 			<h:form>
 				<p:growl id="growl" showDetail="true" sticky="true" />
